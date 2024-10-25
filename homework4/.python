@@ -1,1 +1,31 @@
+a = input("Введите число a: ")
+b = input("Введите число b (не равное 0!): ")
+c = input("Введите число c: ")
+
+error = False
+
+try:
+    a = float(a)
+except ValueError:
+    print("Неверный ввод! 'a' должно быть числом.")
+    error = True
+
+try:
+    b = float(b)
+    if b == 0:
+        print("Неверный ввод! 'b' не должно быть равно 0.")
+        error = True
+except ValueError:
+    print("Неверный ввод! 'b' должно быть числом.")
+    error = True
+
+try:
+    c = float(c)
+except ValueError:
+    print("Неверный ввод! 'c' должно быть числом.")
+    error = True
+
+if not error:
+    x = a / b + c * a
+    print(f"Результат вычислений равен: {x}")
 
